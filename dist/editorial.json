@@ -1,0 +1,59 @@
+{
+  "verifiedAt": "2026-11-02",
+  "releases": [
+    {
+      "title": "Grand Theft Auto VI",
+      "date": "2026-11-19",
+      "platforms": ["PlayStation 5", "Xbox Series X|S"],
+      "source": "https://www.rockstargames.com/VI",
+      "note": "Scheduled release date confirmed by Rockstar Games. Calendar date only; regional unlock times may vary."
+    },
+    {
+      "title": "Professor Layton and the New World of Steam",
+      "date": "2026-12-10",
+      "platforms": ["Nintendo Switch 2", "Nintendo Switch", "PlayStation 5", "PC"],
+      "source": "https://www.layton.jp/jouki/en/",
+      "note": "Scheduled release date and platforms listed by publisher LEVEL5."
+    },
+    {
+      "title": "Persona 4 Revival",
+      "date": "2027-02-18",
+      "platforms": ["PlayStation 5", "Xbox Series X|S", "PC"],
+      "source": "https://asia.sega.com/p4r/en/",
+      "note": "Publisher-confirmed date for these platforms. The official site lists Nintendo Switch 2 separately for May 20, 2027."
+    },
+    {
+      "title": "Fable",
+      "date": "2027-02-23",
+      "platforms": ["Xbox Series X|S", "PC", "PlayStation 5"],
+      "source": "https://www.fablethegame.com/en-US/news/fable-faq",
+      "note": "Standard-edition release date confirmed by Xbox. Premium early access is separate."
+    }
+  ],
+  "trailers": [
+    {
+      "title": "Grand Theft Auto VI — Trailer 2",
+      "videoId": "VQRLujxTm3c",
+      "channel": "Rockstar Games",
+      "source": "https://www.youtube.com/watch?v=VQRLujxTm3c"
+    },
+    {
+      "title": "Persona 4 Revival — Pre-Order Trailer",
+      "videoId": "1osdiOAkBKc",
+      "channel": "Official ATLUS West",
+      "source": "https://www.youtube.com/watch?v=1osdiOAkBKc"
+    },
+    {
+      "title": "Professor Layton and the New World of Steam — LEVEL5 VISION 2026 II Trailer",
+      "videoId": "slNnCS6Rn3g",
+      "channel": "LEVEL5 (linked by the official game site)",
+      "source": "https://www.youtube.com/watch?v=slNnCS6Rn3g"
+    },
+    {
+      "title": "Grand Theft Auto VI — Trailer 1",
+      "videoId": "QdBZY2fkU-0",
+      "channel": "Rockstar Games",
+      "source": "https://www.youtube.com/watch?v=QdBZY2fkU-0"
+    }
+  ]
+}
