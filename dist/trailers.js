@@ -40,7 +40,10 @@
    }});
   }catch{if(token===request)$('#trailerPlayerStatus').textContent='The embedded player controls may be blocked by your browser or network. Try Play inside the video or choose another trailer.';}
  }
+ window.getAllin1Trailers=()=>videos.slice();
+ window.playAllin1Trailer=id=>{const video=videos.find(v=>v.videoId===id);if(video)play(video);};
  function render(){
+  window.dispatchEvent(new Event('allin1:trailers'));
   const list=videos.filter(v=>filter==='All'||v.channel===filter);$('#trailerGrid').replaceChildren();
   if(!list.length){$('#trailerGrid').append(el('p','section-note',busy?'Checking recent trailer uploads…':'No trailers available for this platform. Refresh or choose another platform.'));return;}
   for(const video of list){

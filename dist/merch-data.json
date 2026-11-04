@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-11-04",
+  "products": [
+    {
+      "id": "lego-gameboy",
+      "title": "LEGO Game Boy",
+      "brand": "LEGO \u00d7 Nintendo",
+      "categories": [
+        "LEGO",
+        "Collabs"
+      ],
+      "url": "https://www.lego.com/en-us/product/game-boy-72046",
+      "description": "A brick-built tribute to Nintendo\u2019s original handheld. Set 72046.",
+      "icon": "\u25a6",
+      "match": "game boy",
+      "image": "https://www.lego.com/cdn/cs/set/assets/blt96a11f71928f8103/72046_Prod_en-gb.png?fit=bounds&format=jpg&quality=80&width=1500&height=1500&dpr=1"
+    },
+    {
+      "id": "lego-kart",
+      "title": "LEGO Mario & Standard Kart",
+      "brand": "LEGO \u00d7 Nintendo",
+      "categories": [
+        "LEGO",
+        "Collabs"
+      ],
+      "url": "https://www.lego.com/en-us/product/mario-kart-mario-standard-kart-72037",
+      "description": "A build-and-display Mario Kart model. Set 72037.",
+      "icon": "\u25a6",
+      "match": "mario.*standard kart",
+      "image": "https://www.lego.com/cdn/cs/set/assets/blt9b9bd9113f7f11d9/72037_Prod_en-gb.png?fit=bounds&format=jpg&quality=80&width=1500&height=1500&dpr=1"
+    },
+    {
+      "id": "xbox-controller",
+      "title": "Xbox Wireless Controller",
+      "brand": "Xbox",
+      "categories": [
+        "Controllers"
+      ],
+      "url": "https://www.xbox.com/en-US/accessories/controllers/xbox-wireless-controller",
+      "description": "Explore the official controller\u2019s colors, features, and buying options.",
+      "icon": "\u271c",
+      "match": "xbox wireless controller",
+      "image": "https://assets.xboxservices.com/assets/99/9b/999b6ab0-6ae1-432d-bed3-494bc3dfb138.jpg?n=111101_Sharing_200x200.jpg"
+    },
+    {
+      "id": "dualsense",
+      "title": "DualSense Wireless Controller",
+      "brand": "PlayStation",
+      "categories": [
+        "Controllers"
+      ],
+      "url": "https://www.playstation.com/en-us/accessories/dualsense-wireless-controller/",
+      "description": "Explore the official PS5 controller, colors, editions, and buying options.",
+      "icon": "\u271c",
+      "match": "dualsense wireless controller"
+    },
+    {
+      "id": "xbox-hoodie",
+      "title": "Xbox Gloss Black Hoodie",
+      "brand": "Xbox Gear",
+      "categories": [
+        "Apparel"
+      ],
+      "url": "https://gear.xbox.com/products/xbox-wax-black-hoodie",
+      "description": "Official Xbox apparel. Check the product page for sizes and availability.",
+      "icon": "\u2667",
+      "match": "(?:xbox.*(?:gloss|wax)|(?:gloss|wax).*xbox).*hoodie",
+      "image": "http://gear.xbox.com/cdn/shop/files/XBOX_Ecom_GlossHoodie_Blk_TB_01.png?v=1787102359"
+    },
+    {
+      "id": "ps5-pro",
+      "title": "PlayStation 5 Pro",
+      "brand": "PlayStation Direct",
+      "categories": [
+        "Consoles"
+      ],
+      "url": "https://direct.playstation.com/en-us/buy-consoles/playstation5-pro-console",
+      "description": "The PS5 Pro console\u2019s official US product listing.",
+      "icon": "\u25a5",
+      "match": "ps5 pro|playstation ?5 pro"
+    },
+    {
+      "id": "xbox-series-x",
+      "title": "Xbox Series X",
+      "brand": "Xbox",
+      "categories": [
+        "Consoles"
+      ],
+      "url": "https://www.xbox.com/en-US/consoles/xbox-series-x",
+      "description": "Official specifications, console options, and where to buy.",
+      "icon": "\u25a5",
+      "match": "xbox series x",
+      "image": "https://assets.xboxservices.com/assets/18/30/1830806b-d41d-40ce-a846-792df7d14e1d.jpg?n=Xbox-Series-X_Sharing_200x200_02.jpg"
+    },
+    {
+      "id": "steam-deck",
+      "title": "Steam Deck OLED",
+      "brand": "Steam / Valve",
+      "categories": [
+        "Consoles"
+      ],
+      "url": "https://store.steampowered.com/steamdeck",
+      "description": "Explore Valve\u2019s handheld models and official purchasing options.",
+      "icon": "\u25a3",
+      "match": "steam deck(?: oled)?",
+      "image": "https://clan.fastly.steamstatic.com/images/39049601/cd78aecb9b08a705ea2008a833c2b03f1305c848.jpg"
+    }
+  ]
+}

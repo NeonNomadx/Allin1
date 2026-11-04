@@ -5,20 +5,7 @@
   let editorial = {releases:[],trailers:[]};
   const now = new Date(); let calendarYear = now.getFullYear(), calendarMonth = now.getMonth();
   const motionQuery = matchMedia('(prefers-reduced-motion: reduce)');
-  let motionPreference = '';
-  try {motionPreference = localStorage.getItem('allin1-motion') || '';} catch {}
-  function updateMotion() {
-    const off = motionQuery.matches || motionPreference === 'off';
-    document.body.classList.toggle('motion-off',off);
-    $('#animationToggle').setAttribute('aria-pressed',String(!off));
-    $('#animationToggle').setAttribute('aria-label',motionQuery.matches ? 'Animations reduced by your device settings' : off ? 'Turn ambient animation on' : 'Turn ambient animation off');
-    $('#animationToggle').title = motionQuery.matches ? 'Reduced motion is enabled on your device' : off ? 'Ambient animation off' : 'Ambient animation on';
-  }
-  $('#animationToggle').addEventListener('click',() => {
-    motionPreference = motionPreference === 'off' ? 'on' : 'off';
-    try {localStorage.setItem('allin1-motion',motionPreference);} catch {}
-    updateMotion();
-  });
+  function updateMotion() { document.body.classList.toggle('motion-off',motionQuery.matches); }
   motionQuery.addEventListener('change',updateMotion);
   document.addEventListener('visibilitychange',() => document.body.classList.toggle('page-hidden',document.hidden));
   updateMotion();
