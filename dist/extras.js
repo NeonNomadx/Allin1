@@ -64,19 +64,6 @@
   }
   $('#calendarPrev').addEventListener('click',()=>{if(--calendarMonth<0){calendarMonth=11;calendarYear--;}renderCalendar();});
   $('#calendarNext').addEventListener('click',()=>{if(++calendarMonth>11){calendarMonth=0;calendarYear++;}renderCalendar();});
-  function renderTrailers() {
-    $('#trailerGrid').replaceChildren();
-    for(const video of editorial.trailers.filter(v=>/^[a-zA-Z0-9_-]{11}$/.test(v.videoId))) {
-      const card=node('article','trailer-card'),frame=node('div','video-facade');
-      const img=node('img');img.src='https://i.ytimg.com/vi/'+video.videoId+'/hqdefault.jpg';img.alt='';img.loading='lazy';img.width=480;img.height=270;img.addEventListener('error',()=>img.remove());
-      const button=node('button','video-play','▶');button.setAttribute('aria-label','Play '+video.title);
-      button.addEventListener('click',()=>{
-        document.querySelectorAll('.trailer-card iframe').forEach(existing=>{existing.src=existing.src.replace('autoplay=1','autoplay=0');});
-        const iframe=node('iframe');iframe.src='https://www.youtube-nocookie.com/embed/'+video.videoId+'?autoplay=1&playsinline=1';iframe.title=video.title;iframe.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';iframe.allowFullscreen=true;iframe.referrerPolicy='strict-origin-when-cross-origin';frame.replaceWith(iframe);iframe.focus();
-      });
-      frame.append(img,button);card.append(frame,node('h3','',video.title));const attribution=node('p');attribution.append(document.createTextNode(video.channel+' · '),sourceLink(video.source,'Watch on YouTube ↗'));card.append(attribution);$('#trailerGrid').append(card);
-    }
-  }
   function renderReviews() {
     const {items=[],busy=false}=window.getAllin1News?.()||{};
     const reviews=items.filter(item=>/\breviews?\b/i.test([item.title,...(item.categories||[])].join(' '))).slice(0,4);
@@ -100,11 +87,11 @@
   async function loadEditorial() {
     try {
       const response=await fetch('editorial.json');if(!response.ok)throw Error('Unavailable');
-      const data=await response.json();if(!Array.isArray(data.releases)||!Array.isArray(data.trailers))throw Error('Invalid data');
-      editorial=data;renderTrailers();renderReleases();renderCalendar();calendarDownload();
-      $('#editorialStatus').textContent='Official trailers · release dates verified '+data.verifiedAt+'. Dates are curated, not a live release feed.';
+      const data=await response.json();if(!Array.isArray(data.releases))throw Error('Invalid data');
+      editorial=data;renderReleases();renderCalendar();calendarDownload();
+      $('#editorialStatus').textContent='Release dates verified '+data.verifiedAt+'. Dates are curated, not a live release feed.';
     } catch {
-      $('#editorialStatus').textContent='Trailers and release dates could not load. Reload the page to try again.';
+      $('#editorialStatus').textContent='Release dates could not load. Reload the page to try again.';
       $('#nextRelease').replaceChildren(node('p','','Release dates unavailable. Try reloading.'));
       $('#downloadCalendar').hidden=true;renderCalendar();
     }
@@ -113,3 +100,4 @@
   setInterval(()=>{if(!document.hidden&&editorial.releases.length)renderReleases();},60000);
   renderReviews();renderCalendar();loadEditorial();
 })();
+
