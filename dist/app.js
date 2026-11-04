@@ -1,5 +1,6 @@
 'use strict';
 const feeds = [
+  {name:'Steam News',url:'https://store.steampowered.com/feeds/news/collection/steam/',platform:'Steam'},
   {name:'Eurogamer',url:'https://www.eurogamer.net/feed',platform:'Gaming'},
   {name:'Push Square',url:'https://www.pushsquare.com/feeds/latest',platform:'PlayStation'},
   {name:'Xbox Wire',url:'https://news.xbox.com/en-us/feed/',platform:'Xbox'},
@@ -28,6 +29,7 @@ function plain(value) {
 function platform(item, fallback) {
   if (fallback !== 'Gaming') return fallback;
   const text = (item.title + ' ' + (item.categories || []).join(' ')).toLowerCase();
+  if (/\bsteam(?:deck|os)?\b|\bvalve\b/.test(text)) return 'Steam';
   if (/playstation|\bps5\b|\bps4\b/.test(text)) return 'PlayStation';
   if (/xbox|game pass/.test(text)) return 'Xbox';
   if (/nintendo|switch|pokémon|zelda|mario/.test(text)) return 'Nintendo';
@@ -134,7 +136,7 @@ function renderFeature() {
 }
 function render() {
   const term = $('#search').value.trim().toLowerCase();
-  const list = (filter === 'Saved' ? saved : items).filter(x => (filter === 'All' || filter === 'Saved' || (filter === 'Rockstar' ? isRockstar(x) : x.platform === filter)) && (!term || (x.title+' '+x.description+' '+x.source).toLowerCase().includes(term)));
+  const list = (filter === 'Saved' ? saved : items).filter(x => (filter === 'All' || filter === 'Saved' || (filter === 'Rockstar' ? isRockstar(x) : (x.platform === filter || (filter === 'PC' && x.platform === 'Steam')))) && (!term || (x.title+' '+x.description+' '+x.source).toLowerCase().includes(term)));
   $('#stories').replaceChildren();
   $('#savedCount').textContent = saved.length;
   $('#resultCount').textContent = list.length + ' ' + (list.length === 1 ? 'story' : 'stories');

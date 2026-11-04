@@ -1,12 +1,12 @@
 'use strict';
 (() => {
  const $=s=>document.querySelector(s);
- const feeds=[['PlayStation','UC-2Y8dQb0S6DtpxNgAKoJKA'],['Xbox','UCjBp_7RuDBUYbd1LegWEJ8g'],['Nintendo','UCGIY_O-8vW4rfX98KlMkvRg']];
+ const feeds=[['PlayStation','UC-2Y8dQb0S6DtpxNgAKoJKA'],['Xbox','UCjBp_7RuDBUYbd1LegWEJ8g'],['Nintendo','UCGIY_O-8vW4rfX98KlMkvRg'],['Steam','UChmZ6QbxgHlmX3ISIHxIpQQ']];
  let videos=[],filter='All',busy=false,player=null,selected=null,request=0;
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  const text=value=>new DOMParser().parseFromString(String(value||''),'text/html').body.textContent.trim();
  function date(value){const d=new Date(value);return Number.isNaN(+d)?'Date unavailable':d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'});}
- function merge(list){return [...new Map(list.filter(x=>/^[\w-]{11}$/.test(x.videoId)).map(x=>[x.videoId,x])).values()].sort((a,b)=>(Date.parse(b.date)||0)-(Date.parse(a.date)||0)).slice(0,24);}
+ function merge(list){const counts={};return [...new Map(list.filter(x=>/^[\w-]{11}$/.test(x.videoId)).map(x=>[x.videoId,x])).values()].sort((a,b)=>(Date.parse(b.date)||0)-(Date.parse(a.date)||0)).filter(x=>(counts[x.channel]=(counts[x.channel]||0)+1)<=6).slice(0,24);}
  function stop(){request++;if(player){try{player.destroy();}catch{}player=null;}$('#trailerPlayer').replaceChildren();$('#trailerPlayerShell').hidden=true;selected=null;}
  let apiPromise;
  function youtubeAPI(){
