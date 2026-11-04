@@ -1,10 +1,10 @@
 {
-  "id": "./",
+  "id": "/Allin1/",
   "name": "NeonNomad Gaming News",
   "short_name": "NeonNomad",
   "description": "Your gaming news, console updates, Rockstar headlines and trailers.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "/Allin1/",
+  "scope": "/Allin1/",
   "display": "standalone",
   "background_color": "#111026",
   "theme_color": "#17213E",
